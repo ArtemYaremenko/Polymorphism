@@ -5,18 +5,18 @@ public class Truck extends Transport{
         super(modelName, wheelsCount);
     }
 
-    @Override
-    protected void updateTyre() {
-        System.out.println("Меняем покрышку");
-    }
-
-    @Override
-    protected void checkEngine() {
+    private void checkEngine() {
         System.out.println("Проверяем двигатель");
     }
 
-    @Override
-    protected void checkTrailer() {
+    private void checkTrailer() {
         System.out.println("Проверяем прицеп");
+    }
+
+    @Override
+    public void service() {
+        updateTyre();
+        checkEngine();
+        checkTrailer();
     }
 }

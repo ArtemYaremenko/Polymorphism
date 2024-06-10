@@ -5,13 +5,13 @@ public class Car extends Transport{
         super(modelName, wheelsCount);
     }
 
-    @Override
-    protected void updateTyre() {
-        System.out.println("Меняем покрышку");
+    private void checkEngine() {
+        System.out.println("Проверяем двигатель");
     }
 
     @Override
-    protected void checkEngine() {
-        System.out.println("Проверяем двигатель");
+    public void service() {
+        updateTyre();
+        checkEngine();
     }
 }

@@ -1,5 +1,11 @@
 package setvice;
 
-public interface ServiceStation {
-    void check();
+import model.Transport;
+
+public class ServiceStation {
+
+
+    public void check(Transport transport) {
+        transport.service();
+    }
 }

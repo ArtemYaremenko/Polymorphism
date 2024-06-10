@@ -1,8 +1,8 @@
 package model;
 
-import setvice.ServiceStation;
+import setvice.TransportService;
 
-public abstract class Transport implements ServiceStation {
+public abstract class Transport implements TransportService {
     private String modelName;
     private int wheelsCount;
 
@@ -11,27 +11,23 @@ public abstract class Transport implements ServiceStation {
         this.wheelsCount = wheelsCount;
     }
 
-    protected String getModelName() {
+    private String getModelName() {
         return modelName;
     }
 
-    protected int getWheelsCount() {
+    private int getWheelsCount() {
         return wheelsCount;
     }
 
-    protected void updateTyre() {}
-
-    protected void checkEngine() {}
-
-    protected void checkTrailer() {}
+    protected void updateTyre() {
+        System.out.println("Обслуживаем " + getModelName());
+        for (int i = 0; i < getWheelsCount(); i++) {
+            System.out.println("Меняем покрышку");
+        }
+    }
 
     @Override
-    public void check() {
-        System.out.println("Обслуживаем " + this.getModelName());
-        for (int i = 0; i < this.getWheelsCount(); i++) {
-            this.updateTyre();
-        }
-        this.checkEngine();
-        this.checkTrailer();
+    public void service() {
+        updateTyre();
     }
 }

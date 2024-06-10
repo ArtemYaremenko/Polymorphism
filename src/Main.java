@@ -1,7 +1,10 @@
 import model.*;
+import setvice.ServiceStation;
 
 public class Main {
     public static void main(String[] args) {
+        ServiceStation serviceStation = new ServiceStation();
+
         Car car = new Car("car1", 4);
         Car car2 = new Car("car2", 4);
 
@@ -11,11 +14,12 @@ public class Main {
         Bicycle bicycle = new Bicycle("bicycle1", 2);
         Bicycle bicycle2 = new Bicycle("bicycle2", 2);
 
-        car.check();
-        car2.check();
-        bicycle.check();
-        bicycle2.check();
-        truck.check();
-        truck2.check();
+        serviceStation.check(car);
+        serviceStation.check(car2);
+        serviceStation.check(bicycle);
+        serviceStation.check(bicycle2);
+        serviceStation.check(truck);
+        serviceStation.check(truck2);
+
     }
 }
